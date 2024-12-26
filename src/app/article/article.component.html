@@ -2,10 +2,10 @@
     <img [src]="ImageArticle" class="card-img-top" [alt]="AltImg">
     <div class="card-body">
       <h5 class="card-title">
-        {{titreArticle}}
+        {{nom}}
       <span *ngIf="dispo==true">- Indiponible</span>
       </h5>
-      <p class="card-text">{{prixArticle}}</p>
+      <p class="card-text">{{prix}}</p>
       <p class="card-text">{{description}}</p>
       
       <!-- Utilisation de la classe .noLike sur le bouton -->

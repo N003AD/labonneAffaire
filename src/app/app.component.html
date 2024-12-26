@@ -28,11 +28,15 @@
 
 <!-- Contenu de la page -->
 <div id="home" class="container">
-<app-article [titreArticle]="'VELO'"   [prixArticle]="prix1" (info)="onAffiche($event)"></app-article>
-<app-article [titreArticle]="'Voiture'" [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
-<app-article [titreArticle]="'Camion'" [prixArticle]="prix3" (info)="onAffiche($event)"></app-article>
-<app-article [titreArticle]="'Bateau'" [prixArticle]="prix4" (info)="onAffiche($event)"></app-article>
-<app-article [titreArticle]="'Avion'" [prixArticle]="prix5" (info)="onAffiche($event)"></app-article>
+<app-article *ngFor="let element of listeArticle"
+                  [nom]="element.nom"
+                  [prix]="element.prix"
+                  [description]="element.description"
+                  [ImageArticle]="element.ImageArticle"
+                  [AltImg]="element.AltImg"
+                  [dispo]="element.dispo"
+              (info)="onAffiche($event)">
+</app-article>
 
 
 
