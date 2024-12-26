@@ -1,0 +1,36 @@
+/* Assurez-vous que html et body prennent toute la hauteur de la fenêtre */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Le conteneur principal qui gère tout le contenu */
+  #home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    flex-grow: 1; /* Cette propriété permet de pousser le footer vers le bas si le contenu est court */
+  }
+  
+  /* Footer avec un design sombre */
+  footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    height: 40px; /* Vous pouvez ajuster la hauteur */
+  }
+  
+  #alertMessage {
+    text-align: center;
+    padding-top: 20px;
+    color: blue;
+    font-size: 2rem;
+  }
+  

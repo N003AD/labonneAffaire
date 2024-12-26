@@ -1,0 +1,45 @@
+/* Style pour la carte, avec une largeur adaptable */
+.articleInfo {
+    width: 100%; /* Assurez-vous que la carte utilise toute la largeur disponible dans son conteneur */
+    max-width: 18rem; /* Limite la largeur maximale */
+    margin: 1rem; /* Ajoute une marge autour des cartes */
+    border-radius: 8px; /* Pour un effet arrondi sur les coins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+    transition: transform 0.2s ease; /* Transition pour l'effet au survol */
+  }
+  
+  .articleInfo:hover {
+    transform: translateY(-10px); /* L'effet de survol qui soulève la carte légèrement */
+  }
+  
+  /* Responsivité : Ajustement de la taille des cartes pour petits écrans */
+  @media (max-width: 767px) {
+    .articleInfo {
+      width: 100%; /* Carte pleine largeur sur petits écrans */
+      max-width: 100%; /* Enlève la largeur maximale */
+    }
+  }
+  
+  /* Bouton avec une couleur différente pour un "like" ou une action */
+  .noLike {
+    background-color: #4267b2; /* Couleur de fond bleue (comme Facebook) */
+    color: white; /* Texte en blanc */
+    border: none; /* Retirer les bordures */
+    padding: 0.5rem 1rem; /* Padding pour rendre le bouton plus visible */
+    border-radius: 4px; /* Coins arrondis pour le bouton */
+    cursor: pointer; /* Curseur pointer pour une meilleure interactivité */
+  }
+  
+  .noLike:hover {
+    background-color: #365899; /* Couleur de fond plus foncée au survol */
+  }
+  
+  /* Gestion de la visibilité des éléments */
+  .show {
+    display: inline-block; /* Affiche l'élément comme un bloc en ligne */
+  }
+  
+  .hidden {
+    display: none; /* Cache l'élément */
+  }
+  

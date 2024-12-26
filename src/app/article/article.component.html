@@ -1,0 +1,23 @@
+<div class="card articleInfo">
+    <img [src]="ImageArticle" class="card-img-top" [alt]="AltImg">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{titreArticle}}
+      <span *ngIf="dispo==true">- Indiponible</span>
+      </h5>
+      <p class="card-text">{{prixArticle}}</p>
+      <p class="card-text">{{description}}</p>
+      
+      <!-- Utilisation de la classe .noLike sur le bouton -->
+      <a href="#" class="btn noLike" (click)="OnLike()">Go somewhere</a>
+      <p>Nombre de Like: {{NbreLike}}</p>
+      <input type="text" name="" id="" placeholder="Ecris ton commentaire ici" [(ngModel)]="comment">
+      <p>Commentaire: {{comment}}</p>
+      
+      <!-- Vous pouvez utiliser la classe .show ou .hidden selon les besoins -->
+      <!--<div class="show" *ngIf="isVis6ible">
+        <h4>Contenu conditionnel affiché ici</h4>
+      </div> -->
+    </div>
+  </div>
+  
