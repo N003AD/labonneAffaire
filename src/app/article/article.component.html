@@ -1,15 +1,28 @@
 <div class="card articleInfo">
     <img [src]="ImageArticle" class="card-img-top" [alt]="AltImg">
     <div class="card-body">
-      <h5 class="card-title">
+      <h5 class="card-title"  [ngStyle]="{color: getColor()}">
         {{nom}}
-      <span *ngIf="dispo==true">- Indiponible</span>
+      <span *ngIf="dispo==false">- Indiponible</span>
       </h5>
       <p class="card-text">{{prix}}</p>
       <p class="card-text">{{description}}</p>
-      
+            
       <!-- Utilisation de la classe .noLike sur le bouton -->
-      <a href="#" class="btn noLike" (click)="OnLike()">Go somewhere</a>
+     <!-- <a href="#" class="btn noLike" (click)="OnLike()">Go somewhere</a> -->
+      <button  (click)="OnLike()"    
+                [ngClass]= "{
+                  'show':  jaime === true,
+                  'hidden': jaime === false,
+                }"
+      >J'aime</button>
+      <button class="noLike" 
+              (click)="OnLike()"
+              [ngClass]= "{
+                      'show':  jaime === false,
+                      'hidden': jaime === true,
+                    }"
+      >Je n'aime pas</button>
       <p>Nombre de Like: {{NbreLike}}</p>
       <input type="text" name="" id="" placeholder="Ecris ton commentaire ici" [(ngModel)]="comment">
       <p>Commentaire: {{comment}}</p>
