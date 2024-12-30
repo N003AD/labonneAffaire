@@ -2,7 +2,7 @@
     <img [src]="ImageArticle" class="card-img-top" [alt]="AltImg">
     <div class="card-body">
       <h5 class="card-title"  [ngStyle]="{color: getColor()}">
-        {{nom}}
+        {{nom | uppercase}} 
       <span *ngIf="dispo==false">- Indiponible</span>
       </h5>
       <p class="card-text">{{prix}}</p>
