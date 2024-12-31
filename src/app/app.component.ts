@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from './data.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +6,7 @@ import { DataService } from './data.service';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'SnapFace';
-  message: string = " ";
-  listeArticle: any = [];
-
-  constructor(private dataService: DataService){
-
-  }
-
-  ngOnInit(){
-    this.listeArticle = this.dataService.listeArticles;
-  }
-  onAffiche(arg: string) {
-    console.log('Vous avez cliqué sur le produit :'+ arg);
-    return this.message = "Vous avez cliqué sur un produit" + arg;
-  }
 
 }

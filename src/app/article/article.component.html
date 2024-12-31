@@ -5,9 +5,16 @@
         {{nom | uppercase}} 
       <span *ngIf="dispo==false">- Indiponible</span>
       </h5>
+      <!-- getColor() pourrait être simplifié avec une opération ternaire dans le style directement :
+          <h5 class="card-title" [style.color]="dispo ? 'green' : 'red'">
+    </h5>
+      -->
       <p class="card-text">{{prix}}</p>
       <p class="card-text">{{description}}</p>
-            
+      <a routerLink="/details/{idArticle}">=> Voir l'article</a>
+      <!-- <a [routerLink]="['/details', idArticle]">=> Voir l'article</a> 
+           <a [routerLink]="'/details/' + idArticle">=> Voir l'article</a>  -->
+       <hr />
       <!-- Utilisation de la classe .noLike sur le bouton -->
      <!-- <a href="#" class="btn noLike" (click)="OnLike()">Go somewhere</a> -->
       <button  (click)="OnLike()"    

@@ -12,6 +12,9 @@
           <a class="nav-link" href="#">Accueil</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="/liste">Liste</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" routerLink="/ajouter">Ajouter</a>
         </li>
       </ul>
@@ -19,26 +22,7 @@
   </div>
 </nav>
 
-<!-- Début de la page -->
- <div class="container">
-  <div id="alertMessage">
-    <p>{{ message }}</p>
-  </div>
- </div>
-
-<!-- Contenu de la page -->
-<div id="home" class="container">
-<app-article *ngFor="let element of listeArticle"
-                  [nom]="element.nom"
-                  [prix]="element.prix"
-                  [description]="element.description"
-                  [ImageArticle]="element.ImageArticle"
-                  [AltImg]="element.AltImg"
-                  [dispo]="element.dispo"
-              (info)="onAffiche($event)">
-</app-article>
-</div>
-
+<router-outlet></router-outlet>
 <!-- Pied de page -->
 <footer class="py-3 bg-dark">
   <div class="container">

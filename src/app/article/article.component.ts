@@ -22,6 +22,7 @@ export class ArticleComponent implements OnInit {
 @Input() ImageArticle?:string;
 @Input() AltImg?: string;
 @Input() dispo?: boolean;  
+@Input() idArticle?: number;
 
 @Output() info = new EventEmitter<string>();
   NbreLike: number = 0;
@@ -46,6 +47,6 @@ jaime : boolean = true;
       this.NbreLike--;
       this.jaime =true;
     }
-    this.info.emit(`. J'aime bien ce produit: ${this.nom}`);
+    this.info.emit(` J'aime bien le produit: ${this.nom}`);
   }
 }
