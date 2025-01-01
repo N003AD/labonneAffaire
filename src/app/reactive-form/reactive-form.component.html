@@ -1,33 +1,41 @@
 <div class="container">
     <h1>Ajouter un Article</h1>
-    <form  #articleForm="ngForm" (ngSubmit)="onSubmit(f)" #f="ngForm" >
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="titre">Titre de l'article :</label>
+        <label for="title">Titre de l'article :</label>
         <input
           type="text"
-          id="titre"
+          id="title"
           class="form-control"
-          name="titre"
-          [formControl]="titleToAdd"
-          required
-          minlength="4"
-          
+          formControlName="titleToAdd"
         />
+        <div *ngIf="articleForm.get('titleToAdd')?.invalid && articleForm.get('titleToAdd')?.touched" class="text-danger">
+          <div *ngIf="articleForm.get('titleToAdd')?.errors?.['required']">Le titre est obligatoire.</div>
+          <div *ngIf="articleForm.get('titleToAdd')?.errors?.['minlength']">
+            Le titre doit contenir au moins 4 caractères.
+          </div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="prix">Prix :</label>
+  
+      <div class="form-group mt-3">
+        <label for="price">Prix :</label>
         <input
           type="number"
-          id="prix"
+          id="price"
           class="form-control"
-          name="prix"
-          [formControl]="priceToAdd"
-          required
+          formControlName="priceToAdd"
         />
+        <div *ngIf="articleForm.get('priceToAdd')?.invalid && articleForm.get('priceToAdd')?.touched" class="text-danger">
+          <div *ngIf="articleForm.get('priceToAdd')?.errors?.['required']">Le prix est obligatoire.</div>
+          <div *ngIf="articleForm.get('priceToAdd')?.errors?.['min']">
+            Le prix doit être supérieur ou égal à 0.
+          </div>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary" >
+  
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="articleForm.invalid">
         Ajouter
       </button>
     </form>
-</div>
+  </div>
+  
