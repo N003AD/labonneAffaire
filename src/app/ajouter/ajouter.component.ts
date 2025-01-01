@@ -21,7 +21,7 @@ onSubmit(form: NgForm):void{
   const newPrice = this.PriceToAdd;
   console.log("New Title: " + newTitle);
   console.log("New Price: " + newPrice);  
-  this.message = 'Le produit est ajouté avec succès9.';
+  this.message = 'Le produit est ajouté avec succès.';
 }
 
 }
