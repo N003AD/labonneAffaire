@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Ajouter un Article</h1>
+    <form  #articleForm="ngForm" (ngSubmit)="onSubmit(f)" #f="ngForm" >
+      <div class="form-group">
+        <label for="titre">Titre de l'article :</label>
+        <input
+          type="text"
+          id="titre"
+          class="form-control"
+          name="titre"
+          [formControl]="titleToAdd"
+          required
+          minlength="4"
+          
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix :</label>
+        <input
+          type="number"
+          id="prix"
+          class="form-control"
+          name="prix"
+          [formControl]="priceToAdd"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" >
+        Ajouter
+      </button>
+    </form>
+</div>
